@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+@mixin bp($point) {
+  @if $point==xl {
+    @media (min-width: 90rem) {
+      @content;
+    }
+  } @else if $point==l {
+    @media (min-width: 80rem) {
+      @content;
+    }
+  } @else if $point==m {
+    @media (min-width: 60rem) {
+      @content;
+    }
+  } @else if $point==s {
+    @media (min-width: 35rem) {
+      @content;
+    }
+  }
+}
+
+$sans: "Courier New", monospace;
+
+:root {
+  --ratio: 1.2;
+  --ms-0: clamp(1rem, calc(1.3vw + .2rem), 1.24rem);
+  --ms--1: calc(var(--ms-0) / var(--ratio));
+  --ms-1: calc(var(--ms-0) * var(--ratio));
+  --ms-2: calc(var(--ms-1) * var(--ratio));
+  --ms-3: calc(var(--ms-2) * var(--ratio));
+  --ms-4: calc(var(--ms-3) * var(--ratio));
+  --ms-5: calc(var(--ms-4) * var(--ratio));
+  --ms-6: calc(var(--ms-5) * var(--ratio));
+  --ms-7: calc(var(--ms-6) * var(--ratio));
+}

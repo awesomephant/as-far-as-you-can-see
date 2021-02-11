@@ -1,0 +1,34 @@
+---
+layout: base
+class: home
+---
+
+<h2>{{ratios | size}} Ratios = ({{values | size}} ^ 2) - {{values | size}}</h2>
+
+<ul class="ratios">
+    {% for ratio in ratios %}
+    <li>
+        {{ratio.title}} = {{ratio.value}}
+        <img src="/assets/images/{{ratio.a}}_{{ratio.b}}_rectangle.svg" alt="">
+    </li>
+    {% endfor %}
+</ul>
+
+
+<table>
+    <tr>
+        <th>/</th>
+        {% for v in values %}
+        <th>
+            {{v.Title}}
+        </th>
+        {% endfor %}
+    </tr>
+    {% for v in values %}
+    <tr>
+        <th>
+            {{v.Title}}
+        </th>
+    </tr>
+    {% endfor %}
+</table>
